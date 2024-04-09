@@ -14,11 +14,11 @@ class Tasks(models.Model):
     description = models.CharField(max_length = 250)
     end_date = models.DateTimeField()
     project = models.ForeignKey(Project, on_delete = models.DO_NOTHING)
-    priority_choices ={
-        1:"High",
-        2:"Medium",
-        3:"Low"
-    } 
+    priority_choices = (
+        ('1', 'High'),
+        ('2', 'Medium'),
+        ('3', 'Low'),
+    )
     priority = models.CharField(max_length = 6,choices = priority_choices, default = 3)
 
 class Comments(models.Model):
